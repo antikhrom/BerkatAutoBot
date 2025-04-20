@@ -1,9 +1,8 @@
 services:
-  - type: worker
-    name: berkat-bot
+  - type: web
+    name: auto-berkat-bot
     env: python
+    plan: free
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python3 main.py"
-    envVars:
-      - key: BOT_TOKEN
-        value: "твой_токен_бота"
+    autoDeploy: true
